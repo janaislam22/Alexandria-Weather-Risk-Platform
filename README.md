@@ -15,10 +15,6 @@
   <img alt="Open-Meteo" src="https://img.shields.io/badge/Open--Meteo-API-FF8C00">
 </p>
 
-<p align="center">
-  <img src="alex-weather-risk-platform/alex-weather-risk-platform/docs/images/dashboard.png" alt="Power BI dashboard" width="900">
-</p>
-
 ## Highlights
 
 - **API to warehouse:** hourly weather for 3 coastal points (Stanley, Borg El Arab, Abu Qir) pulled from Open-Meteo with Python
