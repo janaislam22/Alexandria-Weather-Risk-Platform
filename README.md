@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/dashboard.png" alt="Power BI dashboard" width="900">
+  <img src="alex-weather-risk-platform/alex-weather-risk-platform/docs/images/dashboard.png" alt="Power BI dashboard" width="900">
 </p>
 
 ## Highlights
@@ -182,10 +182,10 @@ Stanley is the windiest point: it has the strongest gust and the most High days.
 
 ## Dashboard
 
-The Power BI report is in [`dashboard/Alex_Weather_Risk.pbix`](dashboard/Alex_Weather_Risk.pbix). It is a single page in Import mode, connected to the Gold layer.
+The Power BI report is in [`dashboard/Alex_Weather_Risk.pbix`](alex-weather-risk-platform/alex-weather-risk-platform/dashboard/Alex_Weather_Risk.pbix). It is a single page in Import mode, connected to the Gold layer.
 
 <p align="center">
-  <img src="docs/images/dashboard.png" alt="Power BI dashboard filtered to Borg_El_Arab" width="900">
+  <img src="alex-weather-risk-platform/alex-weather-risk-platform/docs/images/dashboard.png" alt="Power BI dashboard filtered to Borg_El_Arab" width="900">
 </p>
 
 | Visual | What it shows |
@@ -205,13 +205,13 @@ The four Gold tables are related one-to-many on `Date_SK` and `Location_SK`.
 An n8n workflow (running in Docker) with two nodes: a **Webhook** (POST) that triggers a Telegram **Send a text message** node.
 
 <p align="center">
-  <img src="docs/images/n8n-workflow.png" alt="n8n workflow: Webhook to Telegram" width="620">
+  <img src="alex-weather-risk-platform/alex-weather-risk-platform/docs/images/n8n-workflow.png" alt="n8n workflow: Webhook to Telegram" width="620">
 </p>
 
 `notebooks/04_alert.ipynb` queries `gold.Fact_Risk` for the High-risk day with the highest `Max_Gust` and POSTs `location`, `date` and `max_gust` to the webhook, which sends this Telegram message:
 
 <p align="center">
-  <img src="docs/images/telegram-alert.png" alt="Telegram high wind alert" width="620">
+  <img src="alex-weather-risk-platform/alex-weather-risk-platform/docs/images/telegram-alert.png" alt="Telegram high wind alert" width="620">
 </p>
 
 The webhook URL is read from the `N8N_WEBHOOK_URL` environment variable and is not stored in the notebooks. The workflow and the Telegram bot credentials live in the n8n instance, not in this repo. The demo runs on the Jan-Mar 2026 data, so the message reports 2026-01-09.
